@@ -1,0 +1,395 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Mind Guard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #e0f7fa, #ffffff);
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background: radial-gradient(circle at 20% 30%, #a1c4fd, #c2e9fb);
+      }
+      25% {
+        background: radial-gradient(circle at 80% 20%, #89f7fe, #66a6ff);
+      }
+      50% {
+        background: radial-gradient(circle at 50% 80%, #fbc2eb, #a6c1ee);
+      }
+      75% {
+        background: radial-gradient(circle at 10% 70%, #fad0c4, #ffd1ff);
+      }
+      100% {
+        background: radial-gradient(circle at 20% 30%, #a1c4fd, #c2e9fb);
+      }
+    }
+
+    .login-box {
+      width: 320px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .login-box h4 {
+      margin-bottom: 20px;
+      color: #0077cc;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #0077cc;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      background: #0077cc;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .login-box p {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .login-box a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 240px;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 14px;
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.5s ease, bottom 0.5s ease;
+    }
+
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 60px;
+    }
+
+    .terms {
+      font-size: 12px;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .terms input[type="checkbox"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h4>Login to Mind Guard</h4>
+    <input type="email" id="emailInput" placeholder="Email" />
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <div class="terms">
+      <label>
+        <input type="checkbox" id="termsCheckbox" />
+        I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
+      </label>
+    </div>
+    <div id="error" class="error"></div>
+    <button id="loginBtn">🔐 Login</button>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+
+  <div id="toast" class="toast">Login successful. Monitoring started.</div>
+
+  
+
+
+  <script src="login.js"></script>
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Mind Guard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #210236, #a7269a);
+    }
+
+    .container {
+      display: flex;
+      width: 850px;
+      height: 500px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(to bottom right, #4b0574, #d47be6);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    .left .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .left .logo img {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, #ffffff 10%, #d4145a 80%);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3), 0 0 12px #ed1e79;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: pulseGlow 1s infinite ease-in-out;
+    }
+
+    .left .logo img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.9), 0 0 20px #fbb03b;
+      cursor: pointer;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 8px #ed1e79;
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 16px #fbb03b;
+      }
+      100% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 8px #ed1e79;
+      }
+    }
+
+    .left h1 {
+      font-size: 28px;
+      margin-bottom: 0;
+      text-align: center;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .left h1:hover {
+      color: #210236;
+    }
+
+    .right {
+      flex: 1;
+      background: white;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #333;
+      text-align: center;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .right h2:hover {
+      color: #d4145a;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #d4145a;
+      outline: none;
+    }
+
+    .terms {
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .terms input {
+      margin-right: 6px;
+    }
+
+    #error {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    #loginBtn {
+      background: linear-gradient(to right, #d4145a, #fbb03b);
+      color: white;
+      padding: 12px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #loginBtn:hover {
+      background: linear-gradient(to right, #fbb03b, #d4145a);
+      transform: scale(1.03);
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 240px;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 14px;
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.5s ease, bottom 0.5s ease;
+    }
+
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 60px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #d4145a;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="logo">
+        <img src="./login img 3.webp" alt="MindGuard Logo">
+      </div>
+      <h1>Welcome to MindGuard<br />A Silent Monitoring System</h1>
+    </div>
+
+    <div class="right">
+      <h2><b>LOGIN</b></h2>
+      <input type="email" id="emailInput" placeholder="Email Address" />
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <div class="terms">
+        <label>
+          <input type="checkbox" id="termsCheckbox" />
+          I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
+        </label>
+      </div>
+      <div id="error"></div>
+      <button id="loginBtn">→ Continue</button>
+      <div class="footer">
+        Don't have an account?
+        <a href="signup.html" id="signupLink">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Login successful. Monitoring started.</div>
+
+  <script src="login.js"></script>
+</body>
+</html>

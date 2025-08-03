@@ -1,0 +1,301 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Mind Guard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #e0f7fa, #ffffff);
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background: radial-gradient(circle at 20% 30%, #a1c4fd, #c2e9fb);
+      }
+      25% {
+        background: radial-gradient(circle at 80% 20%, #89f7fe, #66a6ff);
+      }
+      50% {
+        background: radial-gradient(circle at 50% 80%, #fbc2eb, #a6c1ee);
+      }
+      75% {
+        background: radial-gradient(circle at 10% 70%, #fad0c4, #ffd1ff);
+      }
+      100% {
+        background: radial-gradient(circle at 20% 30%, #a1c4fd, #c2e9fb);
+      }
+    }
+
+    .signup-box {
+      width: 320px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .signup-box h4 {
+      margin-bottom: 20px;
+      color: #0077cc;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #0077cc;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      background: #0077cc;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .signup-box p {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .signup-box a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toast {
+  visibility: hidden;
+  min-width: 240px;
+  margin-left: -120px;
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.4s, bottom 0.4s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="signup-box">
+    <h4>Create Account</h4>
+    <input type="email" id="emailInput" placeholder="Email" />
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" />
+    <div id="error" class="error"></div>
+    <button id="signupBtn">📝 Sign Up</button>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | Mind Guard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, #5f72be, #9921e8);
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: slideFade 0.6s ease;
+    }
+
+    @keyframes slideFade {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #111;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    h2:hover {
+      color: #8e2de2;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #bbb;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #8e2de2;
+      outline: none;
+      box-shadow: 0 0 6px #a367e7;
+    }
+
+    button {
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #3f5efb, #fc466b);
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #fc466b;
+    }
+
+    #error {
+      color: #dc3545;
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .footer {
+      font-size: 13px;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #3f5efb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #fc466b;
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 240px;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px;
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      bottom: 30px;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateX(-50%);
+      transition: opacity 0.4s, bottom 0.4s;
+    }
+
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Create Your Mind Guard Account</h2>
+    <input type="email" id="emailInput" placeholder="Email Address" />
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" />
+    <div id="error"></div>
+    <button id="signupBtn">Sign Up</button>
+    <div class="footer">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="signup.js"></script>
+</body>
+</html>

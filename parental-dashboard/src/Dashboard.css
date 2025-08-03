@@ -1,0 +1,250 @@
+/*.dashboard-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .refresh-button-container {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .refresh-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .refresh-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .status-message {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .status-message.error {
+    color: red;
+  }
+  
+  .log-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-break: break-word;
+  }
+  
+  .log-table th,
+  .log-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .log-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .log-table td a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .log-table td a:hover {
+    text-decoration: underline;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-dropdown {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  */
+
+  .navbar {
+  background: linear-gradient(to right, #662d8c, #ed1e79);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links li:hover {
+  color: #fdd835;
+}
+/* === Container & Typography === */
+.dashboard-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7fbfc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* === Navbar Styling === */
+.navbar {
+  background-color: #0077b6;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-links li:hover {
+  color: #ffd60a;
+}
+
+/* === Title === */
+.dashboard-title {
+  text-align: center;
+  font-size: 26px;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+/* === Controls (Filter + Button) === */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.refresh-button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
+
+.filter-dropdown {
+  padding: 7px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* === Table Styling === */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.log-table thead {
+  background-color: #e0f0ff;
+  font-weight: bold;
+}
+
+.log-table th, .log-table td {
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+
+.log-table td a {
+  color: #0066cc;
+  text-decoration: none;
+  display: inline-block;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.log-table td a:hover {
+  text-decoration: underline;
+}
+
+/* === Messages === */
+.status-message {
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+  padding: 10px;
+}
+
+.status-message.error {
+  color: red;
+}
+
+/* === Responsive Table === */
+@media screen and (max-width: 768px) {
+  .log-table th, .log-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

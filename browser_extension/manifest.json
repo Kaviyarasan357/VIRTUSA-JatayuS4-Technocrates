@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Extension",
+  "version": "1.0",
+  "description": "Hi THERE!",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["login.html", "signup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
