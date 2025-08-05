@@ -2,7 +2,6 @@
 
 MindGuard is a browser extension and parental dashboard system designed to monitor web content for potential mental health risk indicators using GenAI models like LLaMA 3.
 
----
 
 ## 🛠️ Setup Instructions
 
